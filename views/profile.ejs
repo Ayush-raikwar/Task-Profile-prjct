@@ -1,0 +1,41 @@
+<%- include('partials/header') %>
+
+<div class="jumbotron text-center">
+  <div class="container">
+    <i class="fas fa-key fa-6x"></i>
+    <h1 class="display-3">Welcome to Your Profile!</h1>
+
+    <table class="table table-dark">
+  <thead>
+    <tr>
+
+      <th scope="col">Name</th>
+      <th scope="col">Degree</th>
+      <th scope="col">City</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+
+      <% usersWithSecrets.forEach(function(user) { %>
+        <td class="secret-text"><%= user.name==='' ? 'Not Available':user.name%></td>
+        <td class="secret-text"><%= user.degree==='' ? 'Not Available':user.degree  %></td>
+        <td class="secret-text"><%= user.city==='' ? 'Not Available':user.city %></td>
+      <% }); %>
+
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+
+    <hr>
+
+    <a class="btn btn-light btn-lg" href="/logout" role="button">Log Out</a>
+    <a class="btn btn-dark btn-lg" href="/submit" role="button">Complete/Update your Profile</a>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

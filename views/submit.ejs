@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+
+<div class="container">
+  <div class="jumbotron centered">
+    <i class="fas fa-key fa-6x"></i>
+    <h1 class="display-3">Your Profile!</h1>
+    <p class="secret-text">Welcome to Your personal Profile page!</p>
+
+    <form action="/submit" method="POST">
+
+      <div class="form-group">
+        <input type="text" class="form-control text-center" name="name" placeholder="Your Name here" value="<%= userData.name %>">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control text-center" name="degree" placeholder="Qualification Degree" value="<%= userData.degree %>">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control text-center" name="city" placeholder="Which city you are from?" value="<%= userData.city %>">
+      </div>
+      <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+
+
+  </div>
+</div>
+<%- include('partials/footer') %>
